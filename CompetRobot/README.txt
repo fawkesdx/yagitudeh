@@ -6,7 +6,7 @@ This Simulink project contains the files for the Mathworks Mars Rover robot comp
 3. Press Run to start simulation
 
 ================== Requirements ==================
-MATLAB r2015a on Windows 7 64bits with Simulink, Stateflow, and some other Tool Boxes
+MATLAB r2015b on Windows 7 64bits with Simulink, Stateflow, and some other Tool Boxes
 Arduino DUE Simulink support package is needed
 
 ================== Release Notes ==================
