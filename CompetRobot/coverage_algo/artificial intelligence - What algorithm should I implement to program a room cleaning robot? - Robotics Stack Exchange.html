@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>artificial intelligence - What algorithm should I implement to program a room cleaning robot? - Robotics Stack Exchange</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/robotics/img/favicon.ico?v=42259f93a085">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/robotics/img/apple-touch-icon.png?v=2b4dee09af5b">
+    <link rel="search" type="application/opensearchdescription+xml" title="Robotics Stack Exchange" href="http://robotics.stackexchange.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@StackRobotics">
+    <meta name="twitter:domain" content="robotics.stackexchange.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/robotics/img/apple-touch-icon.png?v=2b4dee09af5b&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="What algorithm should I implement to program a room cleaning robot?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="For this question assume that the following things are unknown:
+
+
+The size and shape of the room
+The location of the robot
+The presence of any obstacles
+
+
+Also assume that the following things are ">
+    <meta property="og:url" content="http://robotics.stackexchange.com/questions/628/what-algorithm-should-i-implement-to-program-a-room-cleaning-robot">
+    <link rel="canonical" href="http://robotics.stackexchange.com/questions/628/what-algorithm-should-i-implement-to-program-a-room-cleaning-robot">
+
+    
+    
+    <script src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/quant.js" async=""></script><script src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/beacon.js" async=""></script><script src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/analytics.js" async=""></script><script src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/ados.js" async="" type="text/javascript"></script><script src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/jquery.js"></script>
+    <script src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'What algorithm should I implement to program a room cleaning robot?'" href="http://robotics.stackexchange.com/feeds/question/628">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://robotics.stackexchange.com/questions/628/what-algorithm-should-i-implement-to-program-a-room-cleaning-robot">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://robotics.stackexchange.com/questions/628/what-algorithm-should-i-implement-to-program-a-room-cleaning-robot">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://robotics.stackexchange.com/questions/628/what-algorithm-should-i-implement-to-program-a-room-cleaning-robot">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:4,shownCommentCount:4,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:628});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('469', '628');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+                <script type="text/x-mathjax-config;executed=true">
+                    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+                                        tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+                                        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+                                        messageStyle: "none"
+                });
+                </script>        
+            <script src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/MathJax.js"></script>  
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com,ws://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('469');
+                StackExchange.realtime.subscribeToTopBarNotifications('469');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1459210948,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","enableUserHovercards":true,"snippets":{"enabled":false,"domain":"stacksnippets.net"},"site":{"name":"Robotics Stack Exchange","description":"Q&A for professional robotic engineers, hobbyists, researchers and students","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":469,"enableSocialMediaInSharePopup":true},"user":{"fkey":"b94b719891765a3ca6a111b45d54efef","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true},"realtime":{"newest":true,"active":true,"tagged":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"7203330febaf","js/moderator.en.js":"fb585438a3ae","js/full-anon.en.js":"4f319a87f632","js/full.en.js":"b94dd4e0e264","js/wmd.en.js":"8e6b54249362","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"422198ffaba0","js/help.en.js":"8ccb22b4d37a","js/tageditor.en.js":"33f9dfb1b52e","js/tageditornew.en.js":"6ce60b1ac596","js/inline-tag-editing.en.js":"0f5c6409438a","js/revisions.en.js":"db5a160e1690","js/review.en.js":"e8a2c84d2fe7","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"2c48173020b2","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"dc2eb827d928","js/keyboard-shortcuts.en.js":"d748fa0a26ca","js/external-editor.en.js":"9327339c2328","js/mathjax-editing.en.js":"bc9f9ef97e33"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/full-anon.js" async=""></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/post-validation.js" async=""></script><script src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/external-editor.js" async=""></script><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?rev=2.6.1') format('woff'), url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?rev=2.6.1') format('opentype')}
+@font-face {font-family: MathJax_Main; src: url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?rev=2.6.1') format('woff'), url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?rev=2.6.1') format('opentype'); font-weight: bold}
+@font-face {font-family: MathJax_Main; src: url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?rev=2.6.1') format('woff'), url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?rev=2.6.1') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Math; src: url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?rev=2.6.1') format('woff'), url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?rev=2.6.1') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Caligraphic; src: url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?rev=2.6.1') format('woff'), url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?rev=2.6.1') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?rev=2.6.1') format('woff'), url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?rev=2.6.1') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?rev=2.6.1') format('woff'), url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?rev=2.6.1') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?rev=2.6.1') format('woff'), url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?rev=2.6.1') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?rev=2.6.1') format('woff'), url('http://cdn.mathjax.org/mathjax/2.6-latest/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?rev=2.6.1') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="question-page new-topbar"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px none; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div style="display: none;" id="MathJax_Message"></div>
+    <noscript><div id="noscript-padding"></div></noscript>
+    
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://robotics.stackexchange.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://robotics.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="469" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-robotics" title="Robotics"></div>
+        Robotics
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.robotics.stackexchange.com/" class="site-link js-gps-track" data-id="470" data-gps-track="
+            site.switch({ target_site:470, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-roboticsmeta" title="Robotics Meta"></div>
+        Robotics Meta
+    </a>
+
+                </li>
+                    </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://robotics.stackexchange.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2frobotics.stackexchange.com%2fquestions%2f628%2fwhat-algorithm-should-i-implement-to-program-a-room-cleaning-robot" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://robotics.stackexchange.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2frobotics.stackexchange.com%2fquestions%2f628%2fwhat-algorithm-should-i-implement-to-program-a-room-cleaning-robot" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 154 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://robotics.stackexchange.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2frobotics.stackexchange.com%2fquestions%2f628%2fwhat-algorithm-should-i-implement-to-program-a-room-cleaning-robot" class="login-link">sign up</a>
+                                <a href="https://robotics.stackexchange.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2frobotics.stackexchange.com%2fquestions%2f628%2fwhat-algorithm-should-i-implement-to-program-a-room-cleaning-robot" class="login-link">log in</a>
+
+                        <a href="http://robotics.stackexchange.com/tour">tour</a>
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://robotics.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://robotics.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.robotics.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="Search Q&amp;A" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://robotics.stackexchange.com/">
+                    Robotics
+                        <span class="beta-title">beta</span>
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://robotics.stackexchange.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://robotics.stackexchange.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://robotics.stackexchange.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://robotics.stackexchange.com/help/badges">Badges</a></li>
+                                                <li><a id="nav-unanswered" href="http://robotics.stackexchange.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://robotics.stackexchange.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/robotics/img/apple-touch-icon.png?v=2b4dee09af5b">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Robotics Stack Exchange is a question and answer site for 
+professional robotic engineers, hobbyists, researchers and students. 
+It's 100% free, no registration required.
+            <br>
+            <br>
+            <a href="http://robotics.stackexchange.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2frobotics.stackexchange.com%2fquestions%2f628%2fwhat-algorithm-should-i-implement-to-program-a-room-cleaning-robot" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Here's how it works:</b>
+            <ol id="hiw">
+                <li id="q">Anybody can ask a question
+                </li>
+                <li id="an">Anybody can answer
+                </li>
+                <li id="b">The best answers are voted up and rise to the top
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://robotics.stackexchange.com/questions/628/what-algorithm-should-i-implement-to-program-a-room-cleaning-robot" class="question-hyperlink">What algorithm should I implement to program a room cleaning robot?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="628" id="question">
+
+        <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="628" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">18</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>11</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>For this question assume that the following things are unknown:</p>
+
+<ul>
+<li>The size and shape of the room</li>
+<li>The location of the robot</li>
+<li>The presence of any obstacles</li>
+</ul>
+
+<p>Also assume that the following things are constant:</p>
+
+<ul>
+<li>The size and shape of the room</li>
+<li>The number, shape and location of all (if any) obstacles</li>
+</ul>
+
+<p>And assume that the robot has the following properties:</p>
+
+<ul>
+<li>It can only move forward in increments of absolute units and turn in
+ degrees. Also the operation that moves will return true if it succeeded
+ or false if it failed to move due to an obstruction</li>
+<li>A reasonably unlimited source of power (let's say it is a solar 
+powered robot placed on a space station that faces the sun at all times 
+with no ceiling)</li>
+<li>Every movement and rotation is carried out with absolute precision every time (don't worry about unreliable data)</li>
+</ul>
+
+<p>Finally please consider the following properties of the robot's environment:</p>
+
+<ul>
+<li>Being on a ceiling-less space station the room is a safe but 
+frustratingly close distance to passing comets, so the dust (and ice) 
+are constantly littering the environment.</li>
+</ul>
+
+<p>I was asked a much simpler version of this question (room is a 
+rectangle and there are no obstacles, how would you move over it 
+guaranteeing you could over every part at least once) and after I 
+started wondering how you would approach this if you couldn't guarantee 
+the shape or the presence of obstacles. I've started looking at this 
+with <a href="http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's algorithm</a>, but I'm fascinated to hear how others approach this (or if there is a well accepted answer to this? (How does Roomba do it?)</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://robotics.stackexchange.com/questions/tagged/mobile-robot" class="post-tag js-gps-track" title="show questions tagged 'mobile-robot'" rel="tag">mobile-robot</a> <a href="http://robotics.stackexchange.com/questions/tagged/artificial-intelligence" class="post-tag js-gps-track" title="show questions tagged 'artificial-intelligence'" rel="tag">artificial-intelligence</a> <a href="http://robotics.stackexchange.com/questions/tagged/algorithm" class="post-tag js-gps-track" title="show questions tagged 'algorithm'" rel="tag">algorithm</a> <a href="http://robotics.stackexchange.com/questions/tagged/coverage" class="post-tag js-gps-track" title="show questions tagged 'coverage'" rel="tag">coverage</a> <a href="http://robotics.stackexchange.com/questions/tagged/theory" class="post-tag js-gps-track" title="show questions tagged 'theory'" rel="tag">theory</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://robotics.stackexchange.com/q/628" title="short permalink to this question" class="short-link" id="link-post-628">share</a><span class="lsep">|</span><a href="http://robotics.stackexchange.com/posts/628/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://robotics.stackexchange.com/posts/628/revisions" title="show all edits to this post">edited <span title="2012-12-05 19:39:54Z" class="relativetime">Dec 5 '12 at 19:39</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://robotics.stackexchange.com/users/163/josh-vander-hook"><div class="gravatar-wrapper-32"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/RiInt.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://robotics.stackexchange.com/users/163/josh-vander-hook">Josh Vander Hook</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,490</span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="30 bronze badges"><span class="badge3"></span><span class="badgecount">30</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2012-12-05 18:40:54Z" class="relativetime">Dec 5 '12 at 18:40</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://robotics.stackexchange.com/users/559/jason-sperske"><div class="gravatar-wrapper-32"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/52ee3dd9df40e2484f43869e30b99c91.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://robotics.stackexchange.com/users/559/jason-sperske">Jason Sperske</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">191</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-628" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-750" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">tags like +algorithm and +theory would help a question like this but I don't have the reputation to add them yet</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/559/jason-sperske" title="191 reputation" class="comment-user owner">Jason Sperske</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment750_628"><span title="2012-12-05 18:42:00Z" class="relativetime-clean">Dec 5 '12 at 18:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-2782" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">definitely something better than Roomba</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/1075/octopus" title="721 reputation" class="comment-user">Octopus</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment2782_628"><span title="2013-04-26 03:34:19Z" class="relativetime-clean">Apr 26 '13 at 3:34</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-7692" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Interesting. I have bobsweep and it is programmed just perfectly <a href="http://momblogsociety.com/meet-newest-addition-family-bobsweep/" rel="nofollow">momblogsociety.com/meet-newest-addition-family-bobsweep</a> I suggest it to everyone. Greetings!</span>
+		            –&nbsp;<span class="comment-user">user7400</span>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment7692_628"><span title="2014-11-03 15:57:00Z" class="relativetime-clean">Nov 3 '14 at 15:57</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-7693" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Is this an advertisement? If 
+not, you may want to post information, rather than just the link, 
+explaining how the robot behaves and why it is just perfect.</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/158/shahbaz" title="2347 reputation" class="comment-user">Shahbaz</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment7693_628"><span title="2014-11-03 17:09:22Z" class="relativetime-clean">Nov 3 '14 at 17:09</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-628" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://robotics.stackexchange.com/questions/628/what-algorithm-should-i-implement-to-program-a-room-cleaning-robot?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://robotics.stackexchange.com/questions/628/what-algorithm-should-i-implement-to-program-a-room-cleaning-robot?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://robotics.stackexchange.com/questions/628/what-algorithm-should-i-implement-to-program-a-room-cleaning-robot?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="632"></a>
+<div id="answer-632" class="answer" data-answerid="632" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="632" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">15</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>As far as I know, this problem hasn't been "solved."</p>
+
+<p>Formally, this is an online coverage problem. Coverage, because we 
+must cover each point on the floor, and online because we do not have 
+offline access to the map. If you are interested in the most recent 
+results, I suggest you lookup "<strong>robotic online coverage algorithms</strong>," perhaps in google scholar (there are <em>lots and lots</em>
+ of great results). In addition to @embedded.kyle's very colorful 
+(re)post, I'll add some details (I'll also try to quickly find a few 
+simple results):</p>
+
+<ul>
+<li><p>Dijkstra's will get you a path, but not necessarily a coverage. 
+For example, how do you specify to Dijkstra's that you must visit <em>each</em> point in the graph, instead of visiting <em>one</em> point as quickly as possible? You can run all-pairs shortest paths, but what are the points? You don't have a map.</p></li>
+<li><p>Online algorithms like this are often called "bug" algorithms 
+because they tend to look like a bug wandering across an area, bumping 
+into something, then wandering around it a bit.</p></li>
+<li><p>With no obstacles, and a rectangular room, and assuming you start on the <em>boundary</em> a boustrophedon (way of the ox) path is optimal. 
+<img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/XYE6t.jpg" alt="enter image description here"></p></li>
+</ul>
+
+<p>Funny that farmers have been doing this forever, right? <a href="http://en.wikipedia.org/wiki/Boustrophedon">http://en.wikipedia.org/wiki/Boustrophedon</a>. This can be extended to rooms with obstacles by finding roughly-rectangular area which are free of obstacles. <a href="http://www.ri.cmu.edu/publication_view.html?pub_id=1416">Howie Choset worked on this a bit</a>. </p>
+
+<ul>
+<li>To cover an area with unknown perimeter, and assuming you <em>don't</em>
+ start on the perimeter, what is the optimal strategy? Well, imagine you
+ drop into the world, and can't see the perimeter. You can walk in a 
+straight line until you reach the perimeter, then do a boustrophedon, 
+right? Except now you "wasted" the time spent finding the perimeter, 
+because you will cover that part twice.  This is why robots tend to 
+spiral: By the time you reach a boundary, you have covered a lot of the 
+area (<span style="color: inherit;" class="MathJax_Preview"></span><span role="presentation" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03C0;&lt;/mi&gt;&lt;mo&gt;&amp;#x2217;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;" style="position: relative;" tabindex="0" id="MathJax-Element-1-Frame" class="MathJax"><nobr aria-hidden="true"><span style="width: 3.15em; display: inline-block;" role="math" id="MathJax-Span-1" class="math"><span style="display: inline-block; position: relative; width: 2.547em; height: 0px; font-size: 123%;"><span style="position: absolute; clip: rect(1.28em, 1002.55em, 2.45em, -1000em); top: -2.276em; left: 0em;"><span id="MathJax-Span-2" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-3" class="mi">π<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="font-family: MathJax_Main; padding-left: 0.222em;" id="MathJax-Span-4" class="mo">∗</span><span style="padding-left: 0.222em;" id="MathJax-Span-5" class="msubsup"><span style="display: inline-block; position: relative; width: 1.002em; height: 0px;"><span style="position: absolute; clip: rect(3.154em, 1000.52em, 4.183em, -1000em); top: -4.011em; left: 0em;"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-6" class="mi">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.011em;"></span></span><span style="position: absolute; top: -4.374em; left: 0.574em;"><span style="font-size: 70.7%; font-family: MathJax_Main;" id="MathJax-Span-7" class="mn">2</span><span style="display: inline-block; width: 0px; height: 4.011em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.276em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.08em; border-left: 0px solid; width: 0px; height: 1.172em;"></span></span></nobr><span role="presentation" class="MJX_Assistive_MathML"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>π</mi><mo>∗</mo><msup><mi>d</mi><mn>2</mn></msup></math></span></span><script id="MathJax-Element-1" type="math/tex">\pi*d^2</script> where <span style="color: inherit;" class="MathJax_Preview"></span><span role="presentation" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;/math&gt;" style="position: relative;" tabindex="0" id="MathJax-Element-2-Frame" class="MathJax"><nobr aria-hidden="true"><span style="width: 0.683em; display: inline-block;" role="math" id="MathJax-Span-8" class="math"><span style="display: inline-block; position: relative; width: 0.542em; height: 0px; font-size: 123%;"><span style="position: absolute; clip: rect(1.42em, 1000.54em, 2.449em, -1000em); top: -2.276em; left: 0em;"><span id="MathJax-Span-9" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-10" class="mi">d<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.276em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.079em; border-left: 0px solid; width: 0px; height: 0.999em;"></span></span></nobr><span role="presentation" class="MJX_Assistive_MathML"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>d</mi></math></span></span><script id="MathJax-Element-2" type="math/tex">d</script> is the distance to the <em>nearest</em> boundary, right?). This is helpful: now you are guaranteed to find the nearest boundary, and can trace it out.</li>
+<li>This is a huge, fascinating area. I'm sorry I can't provide a better summary! </li>
+</ul>
+
+<p>The biggest problem is you don't have a map. Without a map, you are 
+limited to simple actions like perimeter following, and moving along a 
+path (like the spiral mentioned).  So, there exist some robots that 
+actually build the map while cleaning, decompose the mapped-out area 
+into shapes, then cover each shape to ensure coverage. See: <a href="http://mintcleaner.com/">http://mintcleaner.com/</a>  </p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://robotics.stackexchange.com/a/632" title="short permalink to this answer" class="short-link" id="link-post-632">share</a><span class="lsep">|</span><a href="http://robotics.stackexchange.com/posts/632/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://robotics.stackexchange.com/posts/632/revisions" title="show all edits to this post">edited <span title="2012-12-05 20:06:19Z" class="relativetime">Dec 5 '12 at 20:06</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-12-05 19:39:29Z" class="relativetime">Dec 5 '12 at 19:39</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://robotics.stackexchange.com/users/163/josh-vander-hook"><div class="gravatar-wrapper-32"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/RiInt.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://robotics.stackexchange.com/users/163/josh-vander-hook">Josh Vander Hook</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,490</span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="30 bronze badges"><span class="badge3"></span><span class="badgecount">30</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-632" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-632" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="629"></a>
+<div id="answer-629" class="answer" data-answerid="629" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="629" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Roomba starts in a spiral until it hits something, then does a 
+perimeter sweep. Then it just bounces around. Roomba being the de facto 
+standard in household robotic vaccum cleaners, I guess you could call it
+ the "accepted solution". But from personal experience (I own two), 
+there is definitely room for improvement.</p>
+
+<p>From <a href="http://electronics.howstuffworks.com/gadgets/home/robotic-vacuum2.htm" rel="nofollow">How Stuff Works</a>:</p>
+
+<p><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/AtbSs.jpg" alt="algorithm"></p>
+
+<p>From <a href="http://www.electronicsinfoline.com/News/New_Gadgets/Robotics/botjunkie-interview-nancy-dussault-smith-on-irobot-s-roomba.html" rel="nofollow">an interview</a> with Nancy Dussault Smith, Vice President of Marketing Communications at iRobot:</p>
+
+<blockquote>
+  <p>When it starts you’ll notice a spiral pattern, it’ll spiral
+  out over a larger and larger area until it hits an object. When it
+  finds an object, it will follow along the edge of that object for a
+  period of time, and then it will start cris-crossing, trying to figure
+  out the largest distance it can go without hitting another object, and
+  that’s helping it figure out how large the space is, but if it goes
+  for too long a period of time without hitting a wall, it’s going to
+  start spiraling again, because it figures it’s in a wide open space,
+  and it’s constantly calculating and figuring that out. </p>
+  
+  <p>It’s similar
+  with the dirt sensors underneath, when one of those sensors gets
+  tripped it changes its behaviors to cover that area. It will then go
+  off in search of another dirty area in a straight path. The way that
+  these different patterns pile on to each other as they go, we know
+  that that is the most effective way to cover a room. </p>
+  
+  <p>The patterns that
+  we chose and how the algorithm was originally developed was based off
+  of behavior-based algorithms born out of MIT studying animals and how
+  they go about searching areas for food. When you look at how ants and
+  bees go out and they search areas, these kinds of coverage and
+  figuring all of that out comes from that research. It’s not exact,
+  obviously, I’m not saying we’re honeybees, but it’s that understanding
+  of how to search out an area in nature that is the basis behind how
+  our adaptive technology is developed.</p>
+</blockquote>
+
+<p>Some long exposure pics of Roombas with LEDs on them illustrate how it works in practice:</p>
+
+<p><a href="http://news.cnet.com/8301-17938_105-20080916-1/vac-hack-lets-roomba-test-air-quality-too/" rel="nofollow"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/YaWBns.jpg" alt="enter image description here"></a>
+<a href="http://artstormer.com/2012/04/08/roomba-light-paintings-created-with-leds-attached-to-vacuums/" rel="nofollow"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/Emsh0s.jpg" alt="enter image description here"></a>
+<a href="http://www.petapixel.com/2011/06/30/light-painting-art-done-using-swarms-of-robot-vacuum-cleaners/" rel="nofollow"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/8pVKMs.jpg" alt="enter image description here"></a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://robotics.stackexchange.com/a/629" title="short permalink to this answer" class="short-link" id="link-post-629">share</a><span class="lsep">|</span><a href="http://robotics.stackexchange.com/posts/629/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://robotics.stackexchange.com/posts/629/revisions" title="show all edits to this post">edited <span title="2013-01-10 14:12:12Z" class="relativetime">Jan 10 '13 at 14:12</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://robotics.stackexchange.com/users/350/ian"><div class="gravatar-wrapper-32"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/c214019be694c1055e9fd56cf86f802c.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://robotics.stackexchange.com/users/350/ian">Ian</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">8,847</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="36 bronze badges"><span class="badge3"></span><span class="badgecount">36</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-12-05 19:01:33Z" class="relativetime">Dec 5 '12 at 19:01</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://robotics.stackexchange.com/users/142/embedded-kyle"><div class="gravatar-wrapper-32"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/422bbc29f7868f20841df82fa775fbc9.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://robotics.stackexchange.com/users/142/embedded-kyle">embedded.kyle</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,394</span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="15 bronze badges"><span class="badge3"></span><span class="badgecount">15</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-629" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-751" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Is this a copy-paste content from the link?</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/163/josh-vander-hook" title="3490 reputation" class="comment-user">Josh Vander Hook</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment751_629"><span title="2012-12-05 19:06:24Z" class="relativetime-clean">Dec 5 '12 at 19:06</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-758" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Josh The relevant material 
+to answer the question has been copied from the linked sites and placed 
+in a blockquote in order to prevent link rot.</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/142/embedded-kyle" title="1394 reputation" class="comment-user">embedded.kyle</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment758_629"><span title="2012-12-05 20:19:55Z" class="relativetime-clean">Dec 5 '12 at 20:19</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-629" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="630"></a>
+<div id="answer-630" class="answer" data-answerid="630" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="630" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The first thing you need to establish is the goal of the robot -- not
+ quite clear from your question.  There are two main tasks that your 
+robot has to accomplish: discovering the shape of the clean-able area, 
+and then cleaning it.  </p>
+
+<p>But is the amount of dirt constant?  Is dirt added constantly?  Is it
+ your goal to minimize the average time that dirt remains on the floor, 
+or the median time?  Is the goal to keep the floor equally clean?  Or is
+ it just to clean once, as quickly as possible?  Are there patterns in 
+the accumulation of dirt that you can measure and use to your advantage 
+in accomplishing your goal?</p>
+
+<p>The answer to these questions will help guide what algorithm you 
+choose.  In the Roomba's robot's case, there might be no point learning 
+the exact layout of the room because furniture (like chairs around a 
+table), people, and other obstacles move very often.  However, in your 
+case it might be better to explore the space to build a complete map 
+(some combination of a lawnmower pattern with finding edges), then use 
+that map to compute the shortest path through the space (the term is 
+"coverage", and there are several ways to do it e.g. <a href="http://www.cs.cmu.edu/%7Emotionplanning/papers/sbp_papers/integrated4/gabriely_spanning.pdf">spanning tree algorithm</a>).</p>
+
+<p>One more thing you'll need to worry about is how to discretize the 
+space you're in.  Because you can move in any direction -- even with 
+integer degree amounts and integer units of distance -- your X and Y 
+positions can have fractional values.  You'll need to decide how to 
+represent obstacles on that map without having it grow to an infinite 
+number of data points.  </p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://robotics.stackexchange.com/a/630" title="short permalink to this answer" class="short-link" id="link-post-630">share</a><span class="lsep">|</span><a href="http://robotics.stackexchange.com/posts/630/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-12-05 19:18:03Z" class="relativetime">Dec 5 '12 at 19:18</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://robotics.stackexchange.com/users/350/ian"><div class="gravatar-wrapper-32"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/c214019be694c1055e9fd56cf86f802c.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://robotics.stackexchange.com/users/350/ian">Ian</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">8,847</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="36 bronze badges"><span class="badge3"></span><span class="badgecount">36</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-630" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-752" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Well since I am sadistically 
+making an interview question harder on myself I suppose I could come up 
+with some more information.  I like the points you are raising :)</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/559/jason-sperske" title="191 reputation" class="comment-user owner">Jason Sperske</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment752_630"><span title="2012-12-05 19:23:13Z" class="relativetime-clean">Dec 5 '12 at 19:23</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-630" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="631"></a>
+<div id="answer-631" class="answer" data-answerid="631" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="631" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Neato uses an organized approach. Using SLAM and bumpers, it maps the
+ 'current' room, perimeter first, then applies some algorithm for 
+cleaning as efficiently as possible.  I've never owned a Roomba, but 
+given what I have read about it's algorithm, I would never switch from a
+ neato.</p>
+
+<p>The Laser Range Finder in the neato is often <a href="http://www.hizook.com/blog/2009/12/20/ultra-low-cost-laser-rangefinders-actualized-neato-robotics">cannabilized</a> for robotics, as it is a cost effective sensor for SLAM algorithms.</p>
+
+<p>If I was given your task, First I would find a suitable <a href="http://openslam.org/">SLAM implementation</a>, based on the hardware I had.</p>
+
+<p>Then I would use a <a href="http://link.springer.com/article/10.1007/s001700170013?LI=true#page-1">CNC ISLAND Motion planning</a> algorithm. My experience is they tend to be very efficient at covering an arbitrary area with the least amount of movement.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://robotics.stackexchange.com/a/631" title="short permalink to this answer" class="short-link" id="link-post-631">share</a><span class="lsep">|</span><a href="http://robotics.stackexchange.com/posts/631/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-12-05 19:21:27Z" class="relativetime">Dec 5 '12 at 19:21</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://robotics.stackexchange.com/users/274/spiked3"><div class="gravatar-wrapper-32"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/NfUAy.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://robotics.stackexchange.com/users/274/spiked3">Spiked3</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,833</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-631" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-753" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">SLAM isn't quite appropriate 
+for this problem because it's a simulation in which there is no 
+uncertainty in the positioning.  For a real robot, you're absolutely 
+right though.</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/350/ian" title="8847 reputation" class="comment-user">Ian</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment753_631"><span title="2012-12-05 19:25:03Z" class="relativetime-clean">Dec 5 '12 at 19:25</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-754" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I missed that (if its there). Actually it says the following are unknown; the location of the robot.</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/274/spiked3" title="1833 reputation" class="comment-user">Spiked3</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment754_631"><span title="2012-12-05 19:27:56Z" class="relativetime-clean">Dec 5 '12 at 19:27</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-755" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I was thinking that the location began as unknown but as a topology of the room was created it might become known.</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/559/jason-sperske" title="191 reputation" class="comment-user owner">Jason Sperske</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment755_631"><span title="2012-12-05 19:29:03Z" class="relativetime-clean">Dec 5 '12 at 19:29</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-756" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This is one of those odd 
+academic problems where simplifications produce strange implications.  
+Since you have no map, no starting location, perfect positioning, and no
+ external entities to coordinate with, absolute position is irrelevant. 
+ You arbitrarily decide that (0,0) is your starting place, then build 
+your map relative to that point.  This isn't really practical in the 
+real world, but does give you some practice with coverage algorithms.</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/350/ian" title="8847 reputation" class="comment-user">Ian</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment756_631"><span title="2012-12-05 19:39:15Z" class="relativetime-clean">Dec 5 '12 at 19:39</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-757" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Your answer is good from a systems perspective. However, I believe this question is a better theory/algorithms question.</span>
+                    –&nbsp;<a href="http://robotics.stackexchange.com/users/163/josh-vander-hook" title="3490 reputation" class="comment-user">Josh Vander Hook</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment757_631"><span title="2012-12-05 20:07:12Z" class="relativetime-clean">Dec 5 '12 at 20:07</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-631" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="9478"></a>
+<div id="answer-9478" class="answer" data-answerid="9478" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="9478" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Looking at the simpler problem that you were asked - a rectangular room, with no obstacles and clean every part <strong>at least</strong> once.</p>
+
+<p>The solution is to find a corner of the room, and finding a corner 
+won't be a big problem. Once that has been achieved, then just follow a 
+spiral path to the center of the room.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://robotics.stackexchange.com/a/9478" title="short permalink to this answer" class="short-link" id="link-post-9478">share</a><span class="lsep">|</span><a href="http://robotics.stackexchange.com/posts/9478/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://robotics.stackexchange.com/posts/9478/revisions" title="show all edits to this post">edited <span title="2016-03-24 09:24:08Z" class="relativetime">Mar 24 at 9:24</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://robotics.stackexchange.com/users/9176/greenonline"><div class="gravatar-wrapper-32"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/rUfLl.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://robotics.stackexchange.com/users/9176/greenonline">Greenonline</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">838</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="21 bronze badges"><span class="badge3"></span><span class="badgecount">21</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-03-23 20:00:10Z" class="relativetime">Mar 23 at 20:00</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://robotics.stackexchange.com/users/13259/user13259"><div class="gravatar-wrapper-32"><img src="artificial%20intelligence%20-%20What%20algorithm%20should%20I%20implement%20to%20program%20a%20room%20cleaning%20robot%3F%20-%20Robotics%20Stack%20Exchange_files/d1208e18f78cc894f84f65a320584c44.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://robotics.stackexchange.com/users/13259/user13259">user13259</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-9478" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-9478" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/628/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="628" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.co.uk" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+        <script>
+            StackExchange.ifUsing("editor", function () {
+                return StackExchange.using("mathjaxEditing", function () {
+                    StackExchange.MarkdownEditor.creationCallbacks.add(function (editor, postfix) {
+                        StackExchange.mathjaxEditing.prepareWmdForMathJax(editor, postfix, [["$", "$"], ["\\\\(","\\\\)"]]);
+                    });
+                });
+            }, "mathjax-editing");
+        </script>
+
+        
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.options.snippets.enabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: false,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+noCode: true,                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="b94b719891765a3ca6a111b45d54efef" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://robotics.stackexchange.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2frobotics.stackexchange.com%2fquestions%2f628%2fwhat-algorithm-should-i-implement-to-program-a-room-cleaning-robot%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="required, but never shown" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2frobotics.stackexchange.com%2fquestions%2f628%2fwhat-algorithm-should-i-implement-to-program-a-room-cleaning-robot%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://robotics.stackexchange.com/questions/tagged/mobile-robot" class="post-tag" title="show questions tagged 'mobile-robot'" rel="tag">mobile-robot</a> <a href="http://robotics.stackexchange.com/questions/tagged/artificial-intelligence" class="post-tag" title="show questions tagged 'artificial-intelligence'" rel="tag">artificial-intelligence</a> <a href="http://robotics.stackexchange.com/questions/tagged/algorithm" class="post-tag" title="show questions tagged 'algorithm'" rel="tag">algorithm</a> <a href="http://robotics.stackexchange.com/questions/tagged/coverage" class="post-tag" title="show questions tagged 'coverage'" rel="tag">coverage</a> <a href="http://robotics.stackexchange.com/questions/tagged/theory" class="post-tag" title="show questions tagged 'theory'" rel="tag">theory</a>  or <a href="http://robotics.stackexchange.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2012-12-05 18:40:54Z"><b>3 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>6835 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://robotics.stackexchange.com/questions/628/what-algorithm-should-i-implement-to-program-a-room-cleaning-robot?lastactivity" class="lastactivity-link" title="2016-03-24 09:24:08Z">4 days ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<style type="text/css">
+    .ads { margin-left: 60px; }
+    .ad-container { width: 300px; height: 250px; margin-right: 20px; margin-bottom: 20px; }
+    .ad-container .ad { height: 250px; }
+    .ad-container .footer-container { overflow: hidden; height: 30px; position: relative; top: -30px; }
+    .ad-container .footer-container .footer { font-family: Arial,Helvetic,Sans-Serif; font-size: 12px; text-align: center; padding-top: 9px; background-color: #000; color: #EFF; opacity: 0.9; filter: alpha(opacity=90); top: 30px; height: 30px; position: relative; }
+    .ad-container a:hover { text-decoration: underline; }
+    #adzerk2 { height: 250px; }
+</style>
+<script>
+    StackExchange.ready(function () {
+        $(".ad-container").hover(
+            function () {
+                $(".ad-container .footer-container .footer").stop(true, true).animate({ top: "0px" }, "fast");
+            },
+            function () {
+                $(".ad-container .footer-container .footer").animate({ top: "30px" }, "fast");
+            });
+    });
+</script>
+    <script>
+        var ados = ados || {};ados.run = ados.run || [];
+        ados.run.push(function () { ados_add_placement(22, 12057, "adcm2", [5,17]).setZone(76); });
+    </script>
+    <div class="everyonelovesstackoverflow" id="adcm2">
+    </div> 
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () {
+        ados_setKeywords('irobot-create,x-host-robotics.stackexchange.com');; ados_load();
+    });         
+</script><div style="margin-bottom: 10px;">
+        
+
+<style type="text/css">
+#newsletter-ad {
+    width: 270px;
+    height: 250px;
+    overflow: hidden;
+    background: url('//cdn.sstatic.net/Sites/beta/img/newsletter-ad.png?v=3');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+        <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b> In it, you'll get:</p>
+        <ul>
+            <li>The week's top questions and answers</li>
+            <li>Important community announcements</li>
+            <li>Questions that need answers</li>
+        </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" value="Sign up for the newsletter" type="button"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=robotics.stackexchange.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">
+    </div>
+</div>
+
+    </div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://robotics.stackexchange.com/q/1349?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="http://robotics.stackexchange.com/questions/1349/working-of-autonomous-lawn-moweralm-in-an-unbounded-area-without-a-perimeter-w?lq=1" class="question-hyperlink">Working of Autonomous Lawn mower(ALM) in an unbounded area without a perimeter wire</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://robotics.stackexchange.com/q/952?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">9
+    </div>
+</a><a href="http://robotics.stackexchange.com/questions/952/whats-an-efficient-way-to-visit-every-reachable-space-on-a-grid-with-unknown-ob?rq=1" class="question-hyperlink">What's an efficient way to visit every reachable space on a grid with unknown obstacles?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://robotics.stackexchange.com/q/1192?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">5
+    </div>
+</a><a href="http://robotics.stackexchange.com/questions/1192/fastest-maze-algorithm-for-robot?rq=1" class="question-hyperlink">Fastest maze algorithm for robot</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://robotics.stackexchange.com/q/1455?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://robotics.stackexchange.com/questions/1455/help-with-adaptive-fill-algorithm-for-water-color-painting-robot?rq=1" class="question-hyperlink">Help with adaptive fill algorithm for Water Color Painting Robot</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://robotics.stackexchange.com/q/1603?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://robotics.stackexchange.com/questions/1603/how-to-implement-the-wavefront-algorithm?rq=1" class="question-hyperlink">How to implement the Wavefront algorithm</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://robotics.stackexchange.com/q/1874?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-2
+    </div>
+</a><a href="http://robotics.stackexchange.com/questions/1874/where-i-can-learn-algorithms-or-and-find-examples-of-code-for-controlling-a-rove?rq=1" class="question-hyperlink">Where I can learn algorithms or and find examples of code for controlling a rover?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://robotics.stackexchange.com/q/2109?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://robotics.stackexchange.com/questions/2109/pomdps-in-robotics?rq=1" class="question-hyperlink">POMDPs in robotics</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://robotics.stackexchange.com/q/2526?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://robotics.stackexchange.com/questions/2526/neuromorphic-engineering-and-robotics?rq=1" class="question-hyperlink">Neuromorphic Engineering and Robotics</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://robotics.stackexchange.com/q/4934?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">-2
+    </div>
+</a><a href="http://robotics.stackexchange.com/questions/4934/perfect-implementation-of-asimovs-3-laws?rq=1" class="question-hyperlink">Perfect implementation of Asimov's 3 Laws</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://robotics.stackexchange.com/q/7660?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://robotics.stackexchange.com/questions/7660/implementing-a-boustrophedon-algorithm-in-a-given-room-with-obstacles?rq=1" class="question-hyperlink">Implementing a boustrophedon algorithm in a given room with obstacles</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://robotics.stackexchange.com/q/8720?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://robotics.stackexchange.com/questions/8720/which-algorithms-are-used-in-autonomous-robot?rq=1" class="question-hyperlink">Which algorithms are used in autonomous robot</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/260529/who-is-the-player" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Who is the player?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/77818/does-mirror-image-hinder-the-capacity-to-take-the-hide-action" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does Mirror image hinder the capacity to take the Hide action?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/76401/whos-the-king-of-the-tournament" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Who's the king of the tournament?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/1055977/why-are-hex-editors-called-binary-editors" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are hex editors called binary editors?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/65822/how-to-react-when-professor-wrongly-corrects-you-in-public" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to react when professor wrongly corrects you in public?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/118709/can-i-get-malware-on-my-phone-if-my-phone-is-tethered-to-my-laptop-downloading" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I get malware on my phone, if my phone is tethered to my laptop downloading torrents?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/65485/moral-dilemma-in-unwittingly-being-paid-to-complete-a-students-work" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Moral dilemma in unwittingly being paid to complete a student's work
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/301211/how-to-write-a-sentence-full-of-symbols" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to write a sentence full of symbols
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/65817/how-can-an-author-get-assurance-that-his-work-will-not-be-stolen-by-journal-staf" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can an author get assurance that his work will not be stolen by journal staff or reviewers?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/313998/should-i-add-redundant-code-now-just-in-case-it-may-be-needed-in-the-future" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I add redundant code now just in case it may be needed in the future?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/124085/find-all-instances-of-element-in-array" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Find all instances of element in array
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/76417/invert-png-image" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Invert png image
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-hardwarerecs" title="Hardware Recommendations Stack Exchange"></div><a href="http://hardwarerecs.stackexchange.com/questions/2398/equivalent-graphics-card" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:635 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Equivalent graphics card
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-latin" title="Latin Language Stack Exchange"></div><a href="http://latin.stackexchange.com/questions/637/were-voiceless-stops-p-t-c-qu-aspirated-in-classical-latin" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:644 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Were voiceless stops (p, t, c, qu) aspirated in Classical Latin?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/76409/toy-store-profits" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Toy store profits
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1714966/what-books-should-i-get-to-self-study-beyond-calculus-for-someone-about-to-start" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What books should I get to self study beyond Calculus for someone about to start undergrad mathematics?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/87620/is-it-acceptable-to-run-10-3-wire-to-a-110v-20a-junction-box" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it acceptable to run 10-3 wire to a 110V 20A junction box?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/39053/how-to-blend-digital-minds" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to Blend (Digital) Minds
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/65810/travelling-to-multiple-countries-in-schengen-region" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Travelling to multiple countries in Schengen region
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-boardgames" title="Board &amp; Card Games Stack Exchange"></div><a href="http://boardgames.stackexchange.com/questions/29493/pandemic-legacy-season-1" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:147 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Pandemic legacy season 1
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/118772/ongoing-executive-impersonation-attack" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Ongoing Executive Impersonation Attack
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-woodworking" title="Woodworking Stack Exchange"></div><a href="http://woodworking.stackexchange.com/questions/3728/applying-clamping-pressure-on-opposing-sides-of-a-circle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:603 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Applying clamping pressure on opposing sides of a circle
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/123239/why-did-marvel-choose-to-recast-bruce-banner-in-avengers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Marvel choose to recast Bruce Banner in Avengers?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/77807/porting-dragon-subdual-rules-from-add-1e-to-dd-5e" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Porting dragon subdual rules from AD&amp;D 1e to D&amp;D 5e?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://robotics.stackexchange.com/feeds/question/628" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/628/ivc/bf8a');});
+</script>
+<noscript>
+    <div><img src="/posts/628/ivc/bf8a" class="dno" alt="" width="0" height="0"></div>
+</noscript></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://robotics.stackexchange.com/tour">tour</a>
+                    <a href="http://robotics.stackexchange.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackexchange.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://robotics.stackexchange.com/contact">contact us</a></b>
+                        <b><a href="http://meta.robotics.stackexchange.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.3.28.3388
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Robotics Stack Exchange works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-24', {'cookieDomain': 'stackexchange.com'});
+                        ga('set', 'dimension2', '|mobile-robot|artificial-intelligence|algorithm|coverage|theory|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+            
+    
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px none; margin: 0px;"><div style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px none; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: MathJax_Main,sans-serif;" id="MathJax_Font_Test"></div></div></body></html>
